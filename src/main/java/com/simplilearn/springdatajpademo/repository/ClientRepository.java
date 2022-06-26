@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @author Pavel Tikhomirov
- * @since 2022-06-19
+ * @since 2022-06-25
  */
 @Repository
 public interface ClientRepository extends CrudRepository<Client, Long> {

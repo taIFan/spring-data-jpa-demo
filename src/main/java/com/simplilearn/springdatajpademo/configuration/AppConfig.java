@@ -5,10 +5,8 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
-import java.sql.SQLException;
 
 /**
  * @author Pavel Tikhomirov
@@ -16,11 +14,9 @@ import java.sql.SQLException;
  */
 @Configuration
 public class AppConfig {
-
-
     @Bean
     @Primary
-    @ConfigurationProperties(prefix="spring.datasource")
+    @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource primaryDataSource() {
         return DataSourceBuilder.create().build();
     }

@@ -9,7 +9,8 @@ import java.util.List;
  * @since 2022-06-25
  */
 public interface PortfolioPositionJdbcTemplateRepository {
-
     List<PortfolioPosition> findAllPositionsByClientId(Long clientId);
+
+    List<PortfolioPosition> findAllPositionsByClientIdCustomObjectMapper(Long clientId);
 
 }

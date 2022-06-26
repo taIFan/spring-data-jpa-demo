@@ -8,11 +8,10 @@ import java.util.Objects;
 
 /**
  * @author Pavel Tikhomirov
- * @since 2022-06-19
+ * @since 2022-06-25
  */
 @Entity
 public class AssetMapping {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;

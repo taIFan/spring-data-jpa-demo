@@ -6,15 +6,13 @@ import java.util.Objects;
 
 /**
  * @author Pavel Tikhomirov
- * @since 2022-06-19
+ * @since 2022-06-25
  */
 @Entity
 public class Client {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-
     private String name;
     @OneToMany
     private List<ClientPortfolio> clientPortfolios;

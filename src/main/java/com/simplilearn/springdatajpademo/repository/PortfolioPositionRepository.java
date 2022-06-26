@@ -1,6 +1,5 @@
 package com.simplilearn.springdatajpademo.repository;
 
-import com.simplilearn.springdatajpademo.model.Client;
 import com.simplilearn.springdatajpademo.model.PortfolioPosition;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -17,6 +16,7 @@ public interface PortfolioPositionRepository extends CrudRepository<PortfolioPos
 
     /**
      * By default Spring data uses jpql
+     *
      * @return list of portfolios by client id
      */
     @Query("SELECT pp FROM PortfolioPosition pp WHERE pp.clientPortfolio " +
