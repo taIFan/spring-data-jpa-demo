@@ -44,10 +44,6 @@ public class PortfolioPositionRepositoryTest {
         ClientPortfolio clientPortfolio = new ClientPortfolio();
         clientPortfolio.setClient(client);
         clientPortfolio.setName("sample portfolio");
-        List<ClientPortfolio> clientPortfolios = new ArrayList<>();
-        clientPortfolios.add(clientPortfolio);
-        client.setClientPortfolios(clientPortfolios);
-
         this.clientRepository.save(client);
 
         AssetMapping equityLongAssetMapping = new AssetMapping();

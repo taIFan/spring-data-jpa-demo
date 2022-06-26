@@ -45,15 +45,12 @@ public class PortfolioPositionRepositoryJdbcTemplateTest {
     public void initializeTest() {
         Client client = new Client();
         client.setName("my sample client");
+        this.clientRepository.save(client);
 
         ClientPortfolio clientPortfolio = new ClientPortfolio();
         clientPortfolio.setClient(client);
         clientPortfolio.setName("sample portfolio");
-        List<ClientPortfolio> clientPortfolios = new ArrayList<>();
-        clientPortfolios.add(clientPortfolio);
-        client.setClientPortfolios(clientPortfolios);
-
-        this.clientRepository.save(client);
+        this.clientPortfolioRepository.save(clientPortfolio);
 
         AssetMapping equityLongAssetMapping = new AssetMapping();
         equityLongAssetMapping.setAssetName("Apple");
@@ -65,12 +62,6 @@ public class PortfolioPositionRepositoryJdbcTemplateTest {
         portfolioPosition.setQuantity(5.0);
         portfolioPosition.setClientPortfolio(clientPortfolio);
         this.portfolioPositionRepository.save(portfolioPosition);
-
-        List<PortfolioPosition> positionList = new ArrayList<>();
-        positionList.add(portfolioPosition);
-        clientPortfolio.setPositionList(positionList);
-
-        this.clientPortfolioRepository.save(clientPortfolio);
     }
 
     @Test
