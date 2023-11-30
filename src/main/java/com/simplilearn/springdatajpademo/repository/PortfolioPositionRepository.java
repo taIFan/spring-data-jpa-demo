@@ -3,6 +3,8 @@ package com.simplilearn.springdatajpademo.repository;
 import com.simplilearn.springdatajpademo.model.PortfolioPosition;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,8 +13,8 @@ import java.util.List;
  * @author Pavel Tikhomirov
  * @since 2022-06-25
  */
-@Repository
-public interface PortfolioPositionRepository extends CrudRepository<PortfolioPosition, Long> {
+@RepositoryRestResource(collectionResourceRel = "portfolio", path = "portfolio")
+public interface PortfolioPositionRepository extends PagingAndSortingRepository<PortfolioPosition, Long>, CrudRepository<PortfolioPosition, Long> {
 
     /**
      * By default Spring data uses jpql
